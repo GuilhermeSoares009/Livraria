@@ -1,0 +1,154 @@
+
+<!--Area de cima-->
+    <section>
+        <!--Barra preta-->
+        <section id="Barra">
+            <div id="menu">
+                <!--Menu Hamburguer 1-->
+                <div class="hamburguer"  id="menu1" onclick='abrir()'>
+                    <div class="barras-menu"></div>
+                    <div class="barras-menu"></div>
+                    <div class="barras-menu"></div>
+                 </div>
+
+                 <!--Menu Hamburguer 2-->
+                 <div class="hamburguer" id="hamburguer-fechar" onclick='fechar()'>
+                    <div class="barras-menu"></div>
+                    <div class="barras-menu"></div>
+                    <div class="barras-menu"></div>
+                 </div>
+
+                 <!--Conteudo Principal-->
+                <a id="adm" href="#">Administrador(a): {{Nome}} </a>
+            </div>
+            
+            <!--Sair-->
+            <a id="sair" href="#">
+                Sair
+            </a>
+        </section>
+    </section>
+
+
+    <!--Seção com menu lateral e conteudo-->
+    <section  id="principal">
+        <!--Menu lateral-->
+        <nav id="menu-lateral">
+            <ul id="lista">
+            
+                <li></li>
+                <li id="linkMenu" href="?pagina=Usuario&metodo=Perfil">Perfil</li>
+                <li>Páginas</li>
+                <li>Categorias</li>
+                <li>Plugins</li>
+                <li>Ir para o site</li>
+          
+            </ul>
+        </nav>
+
+
+<!--Seção com menu lateral e conteudo-->
+<section  id="principal">
+    <!--Menu lateral-->
+    <nav id="menu-lateral">
+        <ul id="lista">
+        
+            <li></li>
+            <li id="linkMenu" href="?pagina=Usuario&metodo=Perfil">{{Nome}}</li>
+            <li>Páginas</li>
+            <li>Categorias</li>
+            <li>Plugins</li>
+            <li>Ir para o site</li>
+      
+        </ul>
+    </nav>
+
+        <!--Conteudo com textos-->
+        <main id="conteudo-principal">
+            <section id="conteudo1">
+                <div id="ret1" class="retangulo">
+                    <h1 id="titulo1">Visitas</h1>
+                    <p>120.310</p>
+                </div>
+
+                <div id="ret2" class="retangulo">
+                    <h1 id="titulo2"> Visitas Únicas</h1>
+                    <p>13.050</p>
+                </div>
+
+                <div id="ret3" class="retangulo">
+                    <h1 id="titulo3">Bounces</h1>
+                    <p>22%</p>
+                </div>
+            </section>
+
+            <section id="conteudo2">
+                <div id="area1" class="cursos">
+                    <div>
+                    <h2>Ultimas Páginas</h2>
+                </div>
+                    <table>
+                        <thead>
+                            <th>Título</th>
+                            <th>Ações</th>
+                        </thead>
+                        <tbody id="corpo">
+                            <tr>
+                                <td><a href="#">Bootstrap 4 - O que há de novo?</a></td>
+                                <td><button>Detalhes</button></td>
+                            </tr>
+
+                            <tr>
+                                <td><a href="#">Trabalhando com modais</a></td>
+                                <td><button>Detalhes</button></td>
+                            </tr>
+
+                            <tr>
+                                <td><a href="#">O que é um Framework</a></td>
+                                <td><button>Detalhes</button></td>
+                            </tr>
+
+                            <tr>
+                                <td><a href="#">Utilizando Scrollspy </a></td>
+                                <td><button>Detalhes</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="area2" class="cursos">
+                    <div>
+                    <h2>Ultimas Páginas</h2>
+                    </div>
+                    <table>
+                        <thead>
+                            <th>Título</th>
+                            <th>Ações</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a href="#">Bootstrap 4 - O que há de novo?</a></td>
+                                <td><button>Editar</button></td>
+                            </tr>
+
+                            <tr>
+                                <td><a href="#">Trabalhando com modais</a></td>
+                                <td><button>Detalhes</button></td>
+                            </tr>
+
+                            <tr>
+                                <td><a href="#">O que é um Framework</a></td>
+                                <td><button>Detalhes</button></td>
+                            </tr>
+
+                            <tr>
+                                <td><a href="#">Utilizando Scrollspy </a></td>
+                                <td><button>Detalhes</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </section>
+<div id='conteudo0'></div>
+  

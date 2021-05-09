@@ -1,0 +1,460 @@
+/*Como o asterisco eu acesso todos o elementos da página*/
+*{
+    margin: 0px;
+    padding:0px;
+    box-sizing:border-box;
+}
+
+/*overflow-x: Quando estiver no celular ele irá até onde determinei a tela e se passar ele não mostra ou adapta o resto
+overflow-y: Retira a barra de rolagem dupla*/
+html, body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+}
+
+/*Determino largura e altura da página*/
+body{
+    max-width: 1400px;
+    min-width: 320px;
+    height:625px;
+}
+/*###############################*/
+/*####### PARTE SUPERIOR ########*/
+/*###############################*/
+
+/*Crio a barra preta*/
+section#Barra {
+    width: 100%;
+    background-color: #222222;
+    height: 50px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    padding: 12px 0px;
+    text-decoration: none;
+    border: 1px solid #080808;
+}
+
+/*Aqui eu coloquei para esquerda o menu hamburguer(os 3 traços) e afastei da borda */
+div#menu {
+    float: left;
+    font-size: 18px;
+    margin-left:2%;
+    font-weight: 500;
+    display: flex;
+    width: 17%;
+}
+
+/*Jogo para direita o sair e afastei da borda */
+a#sair {
+    float:right;
+    margin-right:2%;
+    color:#9d9d9d;
+    text-decoration: none;
+}
+
+/*Quando eu passar o mouse por cima de sair vai alterar a cor devido ao hover*/
+a#sair:hover{
+    color: white;
+}
+
+/*Altero cor da palavra administrador*/
+a#adm {
+    text-decoration: none;
+    color: #9d9d9d
+}
+
+/*Altero cor da letra quando passar mouse por cima*/
+a#adm:hover {
+    color: white;
+    pointer-events: visibleStroke;
+}
+
+/*MENU HAMBURGUER*/
+div.barras-menu{
+    background-color: white;
+    height:2px;
+    width:26px;
+    position: relative;
+}
+
+/*Separo o menu hamburguer da palavra administrador
+  e coloco a borda e afasto o padding da borda*/
+div.hamburguer {
+    margin-right:5px;
+    cursor: pointer;
+    border: 2px solid #333;
+    padding:5%;
+    margin-top: -6px;
+}
+
+div.hamburguer:hover {
+    background-color: #333;
+}
+
+/*Eu pego os filhos do div#hamburguer através do nth-child() 
+e mudo apenas o margin top para os traços do menu hamburguer ficarem separados*/
+div.hamburguer :nth-child(1)
+{
+    margin-top:1px;
+}
+
+/*nth-child(2) o que eu fizer abaixo vai ser no filho 2, ou seja é uma hierarquia de elementos*/
+div.hamburguer :nth-child(2){
+    margin-top: 4px;
+}
+
+/*nth-child(2) o que eu fizer abaixo vai ser no filho 3*/
+div.hamburguer :nth-child(3)
+{
+    margin-top: 4px;
+}
+
+
+/*###############################*/
+/*####### MENU LATERAL ########*/
+/*###############################*/
+
+/*Aqui eu crio o menu lateral*/
+nav#menu-lateral {
+    /*Largura*/
+    width:0;
+    /*Altura*/
+    height: 100%;    
+    /*Fundo colorido*/
+    background-color:#222;
+    /*Aqui o position é fixed pois com ele posso usar os comando top, right e mais
+    Além disso se nçao tiver fixed ou absolute não podemos usar essa propriedade*/
+    position: fixed;
+    top: 50px;
+    /*Entre dois elementos que têm o mesmo pai ele da prioridade ao primeiro nesse caso*/
+    z-index: 1;
+    border-top: solid 1px #333;
+    /*Quando um elemento filho estiver fora do espaço dele
+    nos não iremos mostrar ele na tela*/
+    overflow:hidden;
+    /*É feita a transição de um estado, que é o width nesse caso para outro estado de width, nesse caso
+     pelo javascript, ele faz uma transição que possui um tempo de duração como se fosse uma animação*/
+    transition: width 0.3s;
+}
+
+
+
+/*Lista do menu*/
+ul#lista li {
+    color: #9d9d9d;
+    font-size: 16px;
+    font-weight: 300;
+    /*Aqui eu afasto os elementos internos da bord da tag que estão, nesse caso a tag pai de LI o  UL QUE TE
+    O ID LISTA*/
+    padding: 10px 20px 10px 18px;
+    cursor: pointer;
+}
+
+/*Determino que o filho 1 da lista fica com a cor preta*/
+ul#lista li:nth-child(1){
+    color: white;
+    background-color: black;
+}
+
+ul#lista li:hover{
+    color: white;
+}
+
+/*Aqui eu mudo*/
+main#conteudo-principal
+{
+    padding:10px 10px 10px 32px;
+    /*É feita a transição de um estado, que é o margin-left nesse caso para outro estado de margin-left, 
+    nesse caso alterado pelo javascript, ele faz uma transição que possui um tempo de duração como se fosse uma animação*/
+    transition: margin-left 0.3s;
+    background-color: #ecf0f5;
+    height:98%;
+}
+
+/*Deixo os paineis um do lado do outro*/
+section#conteudo1{
+    display: flex;
+}
+
+/*Criei um segundo menu hamburguer para pode fechar o menu lateral,
+mas eu não mostrou ele logo, uso o javascript para isso*/
+div#hamburguer-fechar{
+    display: none;
+}
+
+a#linkMenu{
+    text-decoration: none;
+}
+
+/*#####################################*/
+/*######## CONTEUDO PRINCIPAL #########*/
+/*#####################################*/
+
+/*Altura da cor de fundo da página */
+section#principal{
+    height: 100%;
+}
+
+/*Eu determino a largura dos paineis*/
+div.retangulo {
+    width: 33%;
+    height: 126px;
+    margin-right: 1%;
+}
+
+/*Tiutlo dos paineis*/
+div.retangulo h1 {
+    height: 38px;
+    font-size: 16px;
+    padding:2%;
+    text-align: center;  
+}
+
+/*Eu coloquei cor de fundo d parte de baixo para todos os p*/
+div.retangulo p{
+    background-color:white;
+    text-align: center;
+    font-weight: 500;
+    height: 86px;
+    padding: 5%;
+    font-size: 24px;
+    color: black;
+}
+
+/*Altero a borda de forma separada*/
+div#ret1{
+    border: 1px solid #bce8f1;
+    font-size: 24px;
+    
+}
+
+/*Altero de forma de forma individual o elemento*/
+div#ret1 h1#titulo1{
+    background-color: #d9edf7;
+    color: #31708f;
+}
+
+/*Painel 2*/
+div#ret2{
+    border: 1px solid #d6e9c6;
+    background-color: #dff0d8;
+    color: #3c763d;
+}
+
+/*Painel 3*/
+div#ret3{
+    border: 1px solid #ebccd1;
+    background-color: #f2dede;
+    color: #a94442;
+}
+
+/*#####################################*/
+/*############ CONTEUDOS #############*/
+/*#####################################*/
+
+/*Dou espaço em cima dos conteudos*/
+section#conteudo2{
+    margin-top: 34px;
+    display: flex;
+}
+
+/*Os paineis tem 50% de largura */
+div.cursos{
+    width: 48%;
+    height: 307px;
+}
+
+/*Aqui pego os titulos dos dois conteudos*/
+div.cursos h2{
+    height: 38px;
+    text-align:left;
+    font-size: 16px;
+    padding: 10px;
+    font-weight: 500;
+}
+
+div#area1 {
+    border: 1px solid #337ab7;
+    border-radius: 2px;
+    margin-right: 15px;
+}
+
+/*Configuro o titullo da primeira tabela*/
+div#area1 h2{
+    color:#fff;
+    background-color: #337ab7;
+    font-family: Arial, Helvetica, sans-serif ;
+}
+
+/*Tabelas e seus formatos*/
+div.cursos table{
+    background-color: #fff;
+    width: 100%;
+    height: 266px;
+}
+
+/*Informo como as bordas vão ficar, se for collapse elas ficam como uma só se forem 2*/
+table {
+    border-spacing: 0;
+    padding:15px;
+}
+
+/*ths tem espaço divido e formatações como a linha de baixo*/
+table th:nth-child(1){
+    width: 50%;
+}
+
+/*Acesso o primeiro filho de th*/
+table th:nth-child(1){
+    text-align:left;
+    padding: 8px;
+}
+
+/*Eu afasto os cursos do lado esquerdo com o padding*/
+
+tr td{
+    padding: 8px;
+    width: 72%;
+}
+/*Determino como vai ser a borda dos th do thead e a fonte*/
+thead th{
+    border-bottom:2px solid #337ab7;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    padding-left: 15px;
+}
+/*Altero tamanho da altura das linhas dos cursos*/
+tbody tr{
+    height:25px;
+}
+
+tbody tr:hover{
+    background-color: #f5f5f5;
+}
+
+/*Bordar de cima nos cursos*/
+tbody tr td {
+    border-top: 1px solid #337ab7;
+}
+/*Mudo a decoração dos dados da tag a para ficar sem underline e ter um cor diferente*/
+td a{
+    color:#337ab7;
+    text-decoration: none;
+}
+
+/*Sempre que o mouse eu mudo o fundo e cor reforço com a mesma gerando um efeito de passar mouse por cima*/
+td a:hover{
+    color: #337ab7;
+    text-decoration: underline;
+}
+
+/*Eu mudo o botões de detalhe: cor da letra, fundo, padding, coloco borda que queroa,
+uso o border radius para arredondar a borda*/
+div#area1 table tbody tr td button {
+    background-color:#5bc0de;
+    color:#fff;
+    padding: 3px;
+    border: 1px solid #46b8da;
+    border-radius: 5px;
+    /*Depois de clicar no botão ele não aparece com a linha externa no botão*/
+    outline: none;
+}
+
+/*Ao passar o mouse por cima o mouse aparece eu muda de cor de fundo e também*/
+td button:hover{
+    background-color:#5bc0de;
+    cursor: pointer;
+}
+
+/*Area 2 bordas*/
+div#area2{
+    border: 1px solid#faebcc;
+    border-radius: 2px;
+}
+
+/*Mundo o fundo do h2 e cor das palavras*/
+div#area2 h2{
+    background-color: #fcf8e3;
+    color: #8a6d3b;
+}
+
+/*Eu mudo o botões de detalhe: cor da letra, fundo, padding, coloco borda que queroa,
+uso o border radius para arredondar a borda*/
+div#area2 table tbody tr td button {
+    background-color:#ec971f;
+    color:#fff;
+    padding: 3px;
+    border: 1px solid #d58512;
+    border-radius: 5px;
+    /*Depois de clicar no botão ele não aparece com a linha externa no botão*/
+    outline: none;
+}
+
+
+/*#####################################*/
+/*########### MEDIA QUERIES ###########*/
+/*#####################################*/
+
+/*Através das medias queries -> @media
+fazemo a responsividade e criamos sites responsivos, ou seja,
+são preparados para diversas telas de dispositivos*/
+@media screen and (max-width: 760px)
+{
+    /*Todo o conteudo do lado do menu lateral*/
+    main#conteudo-principal{
+        padding: 18px 20px;
+    }
+
+    /*Toda secao 01 fica uma em cima do outro*/
+    section#conteudo1, section#conteudo2{
+        display: block !important;
+    }
+    
+    /*Paineis  com numeros: retiro as margens, determino tamanhp, afasto uma debaixo da outrae e mudo altura*/
+    div.retangulo {
+        margin:0px;
+        width: 100%;
+        margin-bottom:10px;
+        height: 100px;
+    }
+
+    /*Aqui eu reduzo a parte a branca que fica os numero dentro do retangulo*/
+    div.retangulo p {
+        height: 60px;
+    }
+
+    /*Tabela de cursos: Mudo o tamahno e afasto uma debaixo da outra*/
+    div.cursos{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    /*MENU VERTICAL -  Aproveitei o menu lateral para trabalhar com um menu vertical,
+    assim deixei com opacidade e coloquei o width 100% para preencher a tela,
+    deixo o height: 0% (que depois vai ser alterado pelo height que está noa javascript)
+    para não aparecer e depois uso o trasitionpara quando eu colocar um height diferente com
+    o javascript ter um TRANSIÇÃO de um height para outro com um tempo de 0.7s,
+    igual uma animação*/
+    nav#menu-lateral {
+         /*O menu está com opacidade = 0 ou seja  ele não aparece com 100% aparece*/
+        opacity: 0%;
+        width:100%;
+        height: 0%;
+        /*Transição entre esse height abaixo e o o que coloco com o javascript
+        como uma animação*/
+        transition: height 0.7s;
+        border: none;
+    }
+
+    /*Eu deixo a barra rolagem*/
+    body{
+        overflow-y: auto;
+    }
+
+    /*Altura da cor de fundo da página */
+    section#principal{
+        height: auto;
+    }
+    
+
+}

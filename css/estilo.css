@@ -1,0 +1,152 @@
+*{
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height:500px;
+}
+
+header{
+    background-color: #021F55;
+    height: 100px;
+    color: white;
+    padding: 20px 2%;
+    font-size: 15pt;
+    font-family: Arial, Helvetica, sans-serif;
+    display:flex;
+}
+
+/*Deixo na 3 coluna a lista e colo seus filhos em formato flex*/
+#listacabecalho
+{
+    grid-column: 6;
+    display: flex;
+    padding: 14px;
+    margin-left: 41%;
+}
+/*A parte principal sendo determinada o seu tamanho.
+  Aumentei a minha altura.*/
+  main { 
+    display: flex;
+    max-width: 1346px;
+    height: 357px;
+    margin-top:56px;
+}
+
+
+/*
+  Eu retiro os pontos da lista desordenada
+  e coloco margem na coluna grid que ele está,
+  a 3 nesse caso
+*/
+#listacabecalho li{
+    list-style:none;
+    margin-right: 15px;
+    font-family: 'Sofia', cursive;
+}
+
+#listacabecalho li  a button{
+  height: 35px;
+    width: 97px;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    background-color: #021F55;
+    border: 2px solid white;
+    border-radius: 22px;
+    font-size: 15pt;
+}
+
+
+/**/
+section#area1, #area2
+{
+    width: 50%;
+    margin-top: -1px; 
+}
+
+#area2{
+  text-align:center;
+}
+
+#area2 img{
+  max-width: 71%;
+}
+
+/*
+===============================
+      Area de Entrada
+===============================
+*/
+/*Area onde fica login e senha*/
+#areadeentrada{
+  display: flex;
+  padding: 0px 10%;
+  height: 413px;
+  padding: 34px 23%;
+}
+
+/*Aqui formato formulario de cadastro*/
+#Cadastrar{
+  border: 1px solid black;
+  width: 50%;
+  padding: 39px;
+}
+/*Aqui formato input da area cadastrar*/
+#Cadastrar form input{
+  display: block;
+  margin: 8px 0px;
+  height: 34px;
+  border-radius: 8px;
+  outline: none;
+  border: 1px solid black;
+  padding: 10px;
+}
+/*Formulario da area login*/
+#Login{
+  border: 1px solid black;
+  width: 50%;
+  padding: 39px;
+}
+/*Formatio input da area login*/
+#Login form input{
+  display: block;
+  margin: 8px 0px;
+  height: 34px;
+  border-radius: 8px;
+  outline: none;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+
+
+/*RODAPE*/
+footer{
+    background-color:#021F55;
+    height:112px;
+    padding: 40px 10% 0px;
+  }
+
+
+
+/*Jogo para a direita o menu rodape*/
+
+footer div#menurodape{
+    float: left;
+    display: flex;
+}
+
+/*Configuracao do ul*/
+footer div#menurodape ul{
+    display: flex;
+  }
+  
+/**/
+footer div#menurodape ul li{
+    list-style: none;
+    margin: 0px 10px 0px;
+    color: #242946;
+  }
