@@ -7,6 +7,12 @@
     //Chamo a controller Usuario
     require_once "Controllers/UsuarioController.php";
 
+    //Livros
+    require_once "Controllers/LivrosController.php";
+
+
+    //Livros
+    require_once "Models/Livros.php";
     //Conexao com o banco
     require_once "lib/database/Conexao.php";
 

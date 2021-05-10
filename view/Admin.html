@@ -85,7 +85,7 @@
             <section id="conteudo2">
                 <div id="area1" class="cursos">
                     <div>
-                    <h2>Ultimas Páginas</h2>
+                    <h2>Ultimas Livros</h2>
                 </div>
                     <table>
                         <thead>
@@ -93,25 +93,17 @@
                             <th>Ações</th>
                         </thead>
                         <tbody id="corpo">
+                        <!--FOR DO TWIG = Mesma lógica do normal, mas precisa "chamar o twig
+                        no index", depois passar para o "render" o array e usar no "html"-->
+                           {% for Livros in Livro %}
                             <tr>
-                                <td><a href="#">Bootstrap 4 - O que há de novo?</a></td>
-                                <td><button>Detalhes</button></td>
+                                <td><a href="#">{{ Livros.NomeLivro }}</a></td>
+                                <td><button>Alterar</button></td>
+                                <td><button>Excluir</button></td>
+                           
                             </tr>
-
-                            <tr>
-                                <td><a href="#">Trabalhando com modais</a></td>
-                                <td><button>Detalhes</button></td>
-                            </tr>
-
-                            <tr>
-                                <td><a href="#">O que é um Framework</a></td>
-                                <td><button>Detalhes</button></td>
-                            </tr>
-
-                            <tr>
-                                <td><a href="#">Utilizando Scrollspy </a></td>
-                                <td><button>Detalhes</button></td>
-                            </tr>
+                            <!--Finalizo endfor-->
+                            {% endfor %}
                         </tbody>
                     </table>
                 </div>

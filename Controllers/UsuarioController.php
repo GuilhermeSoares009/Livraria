@@ -12,31 +12,42 @@ Class UsuarioController{
         if(!empty($_POST['Login']) or !empty($_POST['Senha']) )
             {
             try{
-                //Passo os dados
+                //Trabalho
                 $usuario = new Usuario();
                 $getSet = new UserGS();
                 $resultado = $usuario->Logar($_POST);
-                //Ao passar Status por referêbncia
+
+                 //Passo os dados do Livro
+                $livros = new LivrosController();
+
+                //Busca Livros
+                $livros1 = $livros->Acervo();
+
+                //Ao passar Status por referência
                 //Retorno o valor para a variavel
                 $status = $resultado->Status;
+
                 if($resultado->Status == "Admin"):
+
                     //Pega o local que ficam os templates
                     $loader = new \Twig\Loader\FilesystemLoader('view');
+
                     //Configura eles em uma variavel
                     $twig = new \Twig\Environment($loader);
+
                     //Carrega o template que quero
                     $Template = $twig->load('Admin.html');
                     
                     //Array 
                     $parametros = array();
+
                     //Nele fica os objetos dentro de uma casa do vetor
                     $parametros['Nome'] = $resultado->Nome;
-           
+                    $parametros['Livro'] = $livros1;
 
                     //Passo o array para o render 
                     //Ele coloca os conteudos de acordo com
                     //A casa que eu escolher: usuario
-
                     $conteudo = $Template->render($parametros);
 
                     echo "<script>alert('Bem vindo(a) ". $resultado->Nome."')</script>";
@@ -79,12 +90,14 @@ Class UsuarioController{
             }catch(Exception $e)
             {
                 echo "<script>alert('Informação: ". $e->getMessage()."')</script>";
+
                 //header("Location: index.php");
                 $template = file_get_contents('view/login.html');
                 echo $template;
             }
         }else{
             echo "<script>alert('Insira todos os dados')</script>";
+            
             //header("Location: index.php");
             $template = file_get_contents('view/login.html');
             echo $template;

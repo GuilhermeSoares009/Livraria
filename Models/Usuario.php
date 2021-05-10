@@ -9,11 +9,11 @@ class Usuario{
         $conexao = Conexao::getConexao();
         $login = $dados['Login'];
         $senha = md5($dados['Senha']);
-            $sql = "SELECT * FROM usuario WHERE Usuario = :l and Senha = :s";
-            $sql = $conexao->prepare($sql);
-            $sql->bindValue( ':l', $login);
-            $sql->bindValue( ':s', $senha);
-            $sql->execute();
+        $sql = "SELECT * FROM usuario WHERE Usuario = :l and Senha = :s";
+        $sql = $conexao->prepare($sql);
+        $sql->bindValue( ':l', $login);
+        $sql->bindValue( ':s', $senha);
+        $sql->execute();
  
         $resposta  = $sql->fetchObject('Usuario');
 
