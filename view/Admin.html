@@ -98,7 +98,7 @@
                            {% for Livros in Livro %}
                             <tr>
                                 <td><a href="#">{{ Livros.NomeLivro }}</a></td>
-                                <td><button>Alterar</button> <button>Excluir</button></td>
+                                <td><a href="?pagina=Admin&metodo=index"><button>Alterar</button></a> <button href="#">Excluir</button></td>
                             </tr>
                             <!--Finalizo endfor-->
                             {% endfor %}

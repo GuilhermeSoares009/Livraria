@@ -21,12 +21,14 @@
 
     //Chama os get e Setters
     require_once 'UsuarioGetSET/UserGS.php';
-
-    //Classe AdminController
-    require_once "Controllers/AdminControllers.php";
-
     //Interface
     require_once "interfaceCrud.php";
+    //Class AlterarDados
+     require_once "Models/AlterarDados.php";
+    //Classe AdminController
+    require_once "Controllers/AdminController.php";
+
+
   
     //Inicio o processo de ob
     //Inicio a captura de de views e retorno no str_replace 

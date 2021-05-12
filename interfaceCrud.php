@@ -1,11 +1,11 @@
 <?php
-interface interfaceCrud{
+abstract class interfaceCrud{
 
-    public selecionarTodos()
+    public function selecionarTodos($id)
     {
-        return $TodosOsDados
+        return $TodosOsDados;
     }
-    public function Cadastrar()
+    public function Cadastrar($id)
     {
         return $cadastrar;
     }
