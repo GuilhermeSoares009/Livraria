@@ -1,0 +1,21 @@
+<!--Alterar Dados-->
+<section id="AlterarDados">
+    <!--Imagem Lateral esquerda-->
+    <div id="ImgLivroAlt">    
+        <img src="" alt="">
+    </div>
+
+        <!--Imagem autor mais formulário-->
+    <div id="DadosFormAlt">
+       <img src="" alt="">
+        <form action="?pagina=Admin&metodo=Alterar" method="POST" id="FormAlterar">
+            <input type="text" name="NomeLivro" id="AltNomeLivro" placeholder="">
+            <input type="text" name="Autor" id="AltAutor">
+            <input type="text" name="Genero" id="AltGenero">
+            <input type="text" name="Ano" id="AltAno">
+            <button>Enviar</button>
+            <!--Passo o id do livro-->
+            <input type="hidden" name="idLivro">
+        </form>
+    </div>
+</section>

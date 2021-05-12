@@ -38,7 +38,7 @@
       //Chamo uma função no index, nesse casso será a classe que está no $controller
       //Chamo o metodo também $metodo
       //E por fim passo um parâmetro na area escrita ($id)
-      call_user_func_array(array(new $controller, $metodo),array($id, &$status));
+      call_user_func_array(array(new $controller, $metodo), array($id, &$status));
       //Passo o valor para uma variavel privada
       $this->statusUsuario = $status;
     }

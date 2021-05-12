@@ -10,7 +10,7 @@
 </head>
 <body>
     <header>
-        <h1>Titulo aleatório</h1>
+        <h1>Livraria</h1>
         <ul id="listacabecalho">
             <li>FEATURES</li>
             <li>PREÇO</li>
