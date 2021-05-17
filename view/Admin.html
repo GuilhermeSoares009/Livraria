@@ -1,68 +1,4 @@
 
-<!--Area de cima-->
-    <section>
-        <!--Barra preta-->
-        <section id="Barra">
-            <div id="menu">
-                <!--Menu Hamburguer 1-->
-                <div class="hamburguer"  id="menu1" onclick='abrir()'>
-                    <div class="barras-menu"></div>
-                    <div class="barras-menu"></div>
-                    <div class="barras-menu"></div>
-                 </div>
-
-                 <!--Menu Hamburguer 2-->
-                 <div class="hamburguer" id="hamburguer-fechar" onclick='fechar()'>
-                    <div class="barras-menu"></div>
-                    <div class="barras-menu"></div>
-                    <div class="barras-menu"></div>
-                 </div>
-
-                 <!--Conteudo Principal-->
-                <a id="adm" href="#">Administrador(a): {{Nome}} </a>
-            </div>
-            
-            <!--Sair-->
-            <a id="sair" href="#">
-                Sair
-            </a>
-        </section>
-    </section>
-
-
-    <!--Seção com menu lateral e conteudo-->
-    <section  id="principal">
-        <!--Menu lateral-->
-        <nav id="menu-lateral">
-            <ul id="lista">
-            
-                <li></li>
-                <li id="linkMenu" href="?pagina=Usuario&metodo=Perfil">Perfil</li>
-                <li>Páginas</li>
-                <li>Categorias</li>
-                <li>Plugins</li>
-                <li>Ir para o site</li>
-          
-            </ul>
-        </nav>
-
-
-<!--Seção com menu lateral e conteudo-->
-<section  id="principal">
-    <!--Menu lateral-->
-    <nav id="menu-lateral">
-        <ul id="lista">
-        
-            <li></li>
-            <li id="linkMenu" href="?pagina=Usuario&metodo=Perfil">{{Nome}}</li>
-            <li>Páginas</li>
-            <li>Categorias</li>
-            <li>Plugins</li>
-            <li>Ir para o site</li>
-      
-        </ul>
-    </nav>
-
         <!--Conteudo com textos-->
         <main id="conteudo-principal">
             <section id="conteudo1">
@@ -98,7 +34,7 @@
                            {% for Livros in Livro %}
                             <tr>
                                 <td><a href="#">{{ Livros.NomeLivro }}</a></td>
-                                <td><a href="?pagina=Admin&metodo=index"><button>Alterar</button></a> <button href="#">Excluir</button></td>
+                                <td><a href="?pagina=Admin&metodo=AlterarLivro&id={{Livros.id_livro}}"><button>Alterar</button></a> <button href="#">Excluir</button></td>
                             </tr>
                             <!--Finalizo endfor-->
                             {% endfor %}

@@ -30,7 +30,7 @@ section#Barra {
     height: 50px;
     color: white;
     font-family: 'Roboto', sans-serif;
-    padding: 12px 0px;
+    padding: 5px 0px;
     text-decoration: none;
     border: 1px solid #080808;
 }
@@ -42,8 +42,10 @@ div#menu {
     margin-left:2%;
     font-weight: 500;
     display: flex;
-    width: 17%;
+    width: 23%;
 }
+
+#adm,#sair{padding: 10px 0px;}
 
 /*Jogo para direita o sair e afastei da borda */
 a#sair {
@@ -455,15 +457,31 @@ são preparados para diversas telas de dispositivos*/
     section#principal{
         height: auto;
     }
-
+}
     /*
-    #############################
-            Alterar Dados
-    #############################
+    ###################################
+        HTML: ALTERAR DADOS
+    ###################################
     */
 
-    
+    /*Divisão de espaço das imagens com formulário*/
+    section#AlterarDados{
+        display:flex;
+    }
 
-    
+    /*Espaçamento*/
+    #DadosFormAlt{width:50%;}
 
-}
+    /*Espaço das imagens*/
+    #ImgLivroAlt{display: flex; width: 48%;}
+
+    #ImgLivroAlt img, #DadosFormAlt img{width: 47%; height: 207px;}
+
+    /*Divisão dos inputs*/
+    #FormAlterar{display: grid;}
+
+    /*Alterando espaço, tamanho e altura*/
+    .inputAlterarAutor,#EnviarAlteracao{margin: 0px 0px 7px; width: 47%; height: 44px; padding: 12px;
+
+
+    }

@@ -1,10 +1,10 @@
 <?php
 Class UsuarioController{
-
-    public function Status()
+//Starto o cookie status como Usuario referenciando a tudo sobre
+//view, model e template com Usuario
+    public function __construct()
     {
-        echo "Usuario: ".$this->templ;
-        return $this->templ;
+        $_COOKIE['Status'] = "Usuario";
     }
 
     public function login($id, &$status)
@@ -12,9 +12,11 @@ Class UsuarioController{
         if(!empty($_POST['Login']) or !empty($_POST['Senha']) )
             {
             try{
-                //Trabalho
+                //Chamo a parte do model onde posso usar a classe crud
                 $usuario = new Usuario();
+                //Chamo os gets e setters
                 $getSet = new UserGS();
+                //Faço o login
                 $resultado = $usuario->Logar($_POST);
 
                  //Passo os dados do Livro
@@ -28,7 +30,8 @@ Class UsuarioController{
                 $status = $resultado->Status;
 
                 if($resultado->Status == "Admin"):
-
+                    $_COOKIE['Status'] = "Admin";
+                    
                     //Pega o local que ficam os templates
                     $loader = new \Twig\Loader\FilesystemLoader('view');
 
@@ -54,7 +57,8 @@ Class UsuarioController{
                     echo $conteudo;
 
                 elseif ($Resposta->Status == "Usuario"):
-
+                    $_COOKIE['Status'] = "Usuario";
+                    
                         //Pega o local que ficam os templates
                     $loader = new \Twig\Loader\FilesystemLoader('view');
                     //Configura eles em uma variavel

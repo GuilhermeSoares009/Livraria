@@ -150,3 +150,23 @@ footer div#menurodape ul li{
     margin: 0px 10px 0px;
     color: #242946;
   }
+
+  
+    /*
+    #############################
+            Alterar Dados
+    #############################
+    */
+    
+    /* Altura do section */
+    #AlterarDados{
+      height: 414px;
+      display: flex;
+      width: 100%;
+  }
+
+  /*Espaço da imagem*/
+  #ImgLivroAlt{
+      height: 100%;
+      width: 50%;
+  }

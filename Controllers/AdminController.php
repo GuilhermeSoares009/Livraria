@@ -1,19 +1,12 @@
 <?php
 
 class AdminController extends interfaceCrud{
-    public function index()
-    {   
-        //Chamo o pacote view do meu projeto
-        $loader = new \Twig\Loader\FilesystemLoader('view');
-        //Carrego as configurações nele
-        $twig = new \Twig\Environment($loader);
-        //Chamo a tela que quero
-        $Template = $twig->load('Alterar.html');
-        //Array
-      
-        $tela = $Template->render();
-        echo $tela;
+    //Starto o cookie status como Admin referenciando a(ao) administrador(a)
+    public function __construct()
+    {
+        $_COOKIE['Status']= "Admin";
     }
+
     public function selecionarTodos($id)
     {
         return $TodosOsDados;
@@ -23,17 +16,33 @@ class AdminController extends interfaceCrud{
         return $cadastrar;
     }
 
-    public function Alterar($id)
+    public function AlterarLivro($id)
     {
-            try{
-                $alt = new AlterarDados();
-                $alterarDados = $alt->Atualizar($_POST); 
-            } catch(Exception $e)
-            {
-                echo "Erro ta aqui guilherme: ".$e->getMessage()."##Fim do erro";
-                exit;
-            }
-        return ;
+        //Chamo o pacote view do meu projeto
+        $loader = new \Twig\Loader\FilesystemLoader('view');
+        //Carrego as configurações nele
+        $twig = new \Twig\Environment($loader);
+        //Chamo a tela que quero
+        $Template = $twig->load('Alterar.html');
+        try {
+            $livro = new LivrosController();
+            $livro = $livro->Livro($id);
+        } catch (\Throwable $th) {
+           echo "erro";
+           exit;
+        }    
+      //Paramêtro livroParametro
+      $livroParametro['id'] = $livro->id_livro ;
+      $livroParametro['Nome'] = $livro->NomeLivro ;
+      $livroParametro['Autor'] = $livro->Autor ;
+      $livroParametro['Genero'] = $livro->Genero ;
+      $livroParametro['Ano'] = $livro->Ano ;
+      $livroParametro['Valor'] = $livro->Valor ;
+      $livroParametro['Nota'] = $livro->Nota ;
+      $livroParametro['imagemLivro'] = $livro->imagemLivro ;
+      
+        $tela = $Template->render($livroParametro);
+        echo $tela;
     }
 
     public function Excluir($id)

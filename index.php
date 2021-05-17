@@ -1,5 +1,6 @@
 <?php
-    //Chama a pasta core
+//REQUIRES
+  //Chama a pasta core
     require_once 'vendor/autoload.php';
     require_once "Core/core.php";
     //Chamo a controller Home
@@ -29,7 +30,16 @@
     require_once "Controllers/AdminController.php";
 
 
-  
+    //Starto o cookie
+    //Com ele posso passar dados pela url
+    if(empty($_COOKIE['Status']) || $_COOKIE['Status'] == "Admin"):
+        $status = "Usuario";
+        setcookie("Status", $status);
+    endif;
+
+
+
+
     //Inicio o processo de ob
     //Inicio a captura de de views e retorno no str_replace 
     ob_start();
@@ -48,13 +58,12 @@
     //Finalizo o ob
 
     //Pego o template de acordo com o que tiver no status
-    //Status admin ou user(usuario)
-    if($Core->Status() == "Admin"):
+    //$Status = $Core->Status();
+    if($_COOKIE['Status']== "Admin"):
         $template = file_get_contents('template/Admin.php');
     else:
         $template = file_get_contents('template/home.php');
     endif;
-    
     //Substitui a string {{area_substituivel}} e coloca o que veio da saída e coloca no template
     $Resultado = str_replace('{{area_substituivel}}',$saida, $template);
 

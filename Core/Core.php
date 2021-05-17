@@ -1,6 +1,7 @@
 <?php
  class Core{
    private $statusUsuario = "User";
+   public  $status = null;
     public function Inicio($dados)
     {//Pego a classe atraves da palavra "pagina"
      
@@ -28,11 +29,10 @@
       if(isset($dados['id']) and ($dados['id']) != null)
       {
          $id = $dados['id'];
-         $status = null;
+   
       }
       else{//Caso eu não receba passo o null
          $id = null;
-         $status = null;
       }
 
       //Chamo uma função no index, nesse casso será a classe que está no $controller

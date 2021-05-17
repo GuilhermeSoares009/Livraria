@@ -1,22 +1,24 @@
 <!--Alterar Dados-->
-<section id="AlterarDados">
+<section id="AlterarDados" class="DadosAlt">
     <!--Imagem Lateral esquerda-->
     <div id="ImgLivroAlt">    
-        <img src="" alt="">
+        <img src="images/{{imagemLivro}}.jpg" alt="/MarteJulioScheidner.jpg"> 
+        <img src="images/{{imagemLivro}}livro1.jpg" alt="{{imagemLivro}}livro1.jpg">
     </div>
 
-        <!--Imagem autor mais formulário-->
+    <!--Imagem autor mais formulário-->
     <div id="DadosFormAlt">
-       <img src="" alt="">
         <form action="?pagina=Admin&metodo=Alterar" method="POST" id="FormAlterar">
-            <input type="text" name="NomeLivro" id="AltNomeLivro" placeholder="">
-            <input type="text" name="Autor" id="AltAutor">
-            <input type="text" name="Genero" id="AltGenero">
-            <input type="text" name="Ano" id="AltAno">
-            <input type="text" name="Valor" id="AltVal">
-            <button name="Alterar" value="Alterar">Enviar</button>
-            <!--Passo o id do livro-->
-            <input type="hidden" name="idLivro">
+          
+                <input type="text" class="inputAlterarAutor"  size="20" name="NomeLivro" id="AltNomeLivro" value="{{Nome}}" placeholder="">
+                <input type="text" class="inputAlterarAutor" name="Autor" id="AltAutor" value="{{Autor}}">
+                <input type="text" class="inputAlterarAutor" name="Genero" id="AltGenero" value="{{Genero}}">
+                <input type="text" class="inputAlterarAutor"name="Ano" id="AltAno" value="Ano">
+                <input type="text" class="inputAlterarAutor" name="Valor" id="AltVal" value="Valor">
+                <button name="Alterar" value="Alterar" id="EnviarAlteracao" >Enviar</button>
+                <!--Passo o id do livro-->
+                <input type="hidden" name="idLivro">
+           
         </form>
     </div>
 </section>
