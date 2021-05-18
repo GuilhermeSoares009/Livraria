@@ -28,17 +28,9 @@
      require_once "Models/AlterarDados.php";
     //Classe AdminController
     require_once "Controllers/AdminController.php";
-
-
-    //Starto o cookie
-    //Com ele posso passar dados pela url
-    if(empty($_COOKIE['Status']) || $_COOKIE['Status'] == "Admin"):
-        $status = "Usuario";
-        setcookie("Status", $status);
-    endif;
-
-
-
+    
+    setcookie("Status", 'Usuario');
+    $_COOKIE['Status'] = "Usuario";
 
     //Inicio o processo de ob
     //Inicio a captura de de views e retorno no str_replace 
@@ -56,10 +48,18 @@
     //Finalizo o processo de captura de conteudo
     ob_end_clean();
     //Finalizo o ob
+    
+    
+    //Starto o cookie
+    //Com ele posso passar dados pela url
+
+
+
+
 
     //Pego o template de acordo com o que tiver no status
     //$Status = $Core->Status();
-    if($_COOKIE['Status']== "Admin"):
+    if($_COOKIE['Status'] == "Admin"):
         $template = file_get_contents('template/Admin.php');
     else:
         $template = file_get_contents('template/home.php');

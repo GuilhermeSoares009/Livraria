@@ -38,19 +38,7 @@ Class LivrosController {
         //Retorno array        
         return $acervo;
     }
-//Ele altera o livro
-    public function Alterar($id)
-    {
-            try{
-                $alt = new AlterarDados();
-                $alterarDados = $alt->Atualizar($_POST); 
-            } catch(Exception $e)
-            {
-                echo "Erro ta aqui guilherme: ".$e->getMessage()."##Fim do erro";
-                exit;
-            }
-        return ;
-    }
+
 }
 // 
 ?>

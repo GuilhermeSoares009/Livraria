@@ -25,7 +25,23 @@ class Usuario{
 
     }
 
+    public function UserId($id)
+    {
+        $conexao = Conexao::getConexao();
+        $sql = "SELECT * FROM usuario WHERE id_login = :id";
+        $sql = $conexao->prepare($sql);
+        $sql->bindValue( ':id', $id);
+        $sql->execute();
+ 
+        $resposta  = $sql->fetchObject('Usuario');
 
+        if(empty($resposta))
+        {
+            throw new Exception("Os dados provavelmente não foram preenchidos corretamente ou o usuário não existe.");
+        }
+        return $resposta;
+
+    }
 
     public function Salvar($dados)
     {

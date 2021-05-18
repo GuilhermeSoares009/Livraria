@@ -2,22 +2,43 @@
 <section id="AlterarDados" class="DadosAlt">
     <!--Imagem Lateral esquerda-->
     <div id="ImgLivroAlt">    
-        <img src="images/{{imagemLivro}}.jpg" alt="/MarteJulioScheidner.jpg"> 
-        <img src="images/{{imagemLivro}}livro1.jpg" alt="{{imagemLivro}}livro1.jpg">
+      <div id="pessoa">
+            <img src="images/{{imagemLivro}}.jpg" alt="/MarteJulioScheidner.jpg"> 
+            <h1 class="TitulosAlt">{{Autor}}</h1>
+      <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas iusto dicta repellat temporibus, aliquid dolores, repellendus nihil illum iure illo a, hic maxime iste! Delectus deleniti magnam praesentium tempore libero?
+      </p>
+      </div>
+      <div id="livro">
+            <img src="images/{{imagemLivro}}livro1.jpg" alt="{{imagemLivro}}livro1.jpg">
+            <h2 class="TitulosAlt">{{Nome}}</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas iusto dicta repellat temporibus, aliquid dolores, repellendus nihil illum iure illo a, hic maxime iste! Delectus deleniti magnam praesentium tempore libero?
+            </p>
+      </div>
+       
     </div>
 
     <!--Imagem autor mais formulário-->
     <div id="DadosFormAlt">
-        <form action="?pagina=Admin&metodo=Alterar" method="POST" id="FormAlterar">
-          
+        <form action="?pagina=Admin&metodo=AlterarLivro&id={{id}}" method="POST" id="FormAlterar">
+                <p>Nome da Obra</p>
                 <input type="text" class="inputAlterarAutor"  size="20" name="NomeLivro" id="AltNomeLivro" value="{{Nome}}" placeholder="">
+
+                <p>Nome do Autor</p>
                 <input type="text" class="inputAlterarAutor" name="Autor" id="AltAutor" value="{{Autor}}">
+
+                <p>Genêro</p>
                 <input type="text" class="inputAlterarAutor" name="Genero" id="AltGenero" value="{{Genero}}">
-                <input type="text" class="inputAlterarAutor"name="Ano" id="AltAno" value="Ano">
-                <input type="text" class="inputAlterarAutor" name="Valor" id="AltVal" value="Valor">
+
+                <p>Ano da Obra</p>
+                <input type="text" class="inputAlterarAutor"name="Ano" id="AltAno" value="{{Ano}}">
+
+                <p>Valor da obra</p>
+                <input type="text" class="inputAlterarAutor" name="Valor" id="AltVal" value="{{Valor}}"></p>
                 <button name="Alterar" value="Alterar" id="EnviarAlteracao" >Enviar</button>
                 <!--Passo o id do livro-->
-                <input type="hidden" name="idLivro">
+             
            
         </form>
     </div>

@@ -1,7 +1,5 @@
 <?php
  class Core{
-   private $statusUsuario = "User";
-   public  $status = null;
     public function Inicio($dados)
     {//Pego a classe atraves da palavra "pagina"
      
@@ -38,16 +36,10 @@
       //Chamo uma função no index, nesse casso será a classe que está no $controller
       //Chamo o metodo também $metodo
       //E por fim passo um parâmetro na area escrita ($id)
-      call_user_func_array(array(new $controller, $metodo), array($id, &$status));
-      //Passo o valor para uma variavel privada
-      $this->statusUsuario = $status;
+      call_user_func_array(array(new $controller, $metodo), array($id));
+ 
     }
 
-    //Passo o valor dentro de statusUsuario para quem chamar essa função
-    public function Status()
-    {
-       return $this->statusUsuario;
-    }
 
  }
 

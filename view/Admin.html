@@ -1,4 +1,3 @@
-
         <!--Conteudo com textos-->
         <main id="conteudo-principal">
             <section id="conteudo1">
@@ -34,7 +33,7 @@
                            {% for Livros in Livro %}
                             <tr>
                                 <td><a href="#">{{ Livros.NomeLivro }}</a></td>
-                                <td><a href="?pagina=Admin&metodo=AlterarLivro&id={{Livros.id_livro}}"><button>Alterar</button></a> <button href="#">Excluir</button></td>
+                                <td><a href="?pagina=Admin&metodo=TelaAlterarLivro&id={{Livros.id_livro}}"><button>Alterar</button></a> <button href="#">Excluir</button></td>
                             </tr>
                             <!--Finalizo endfor-->
                             {% endfor %}

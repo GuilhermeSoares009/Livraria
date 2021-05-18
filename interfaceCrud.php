@@ -12,11 +12,11 @@ abstract class interfaceCrud{
 
     public function Alterar($id)
     {
-        return $alterarDados;
+
     }
 
     public function Excluir($id)
     {
-        return $excluirDado;
+
     }
 }

@@ -166,7 +166,7 @@ ul#lista li:hover{
 /*Aqui eu mudo*/
 main#conteudo-principal
 {
-    padding:10px 10px 10px 32px;
+    padding:26px 10px 10px 32px;
     /*É feita a transição de um estado, que é o margin-left nesse caso para outro estado de margin-left, 
     nesse caso alterado pelo javascript, ele faz uma transição que possui um tempo de duração como se fosse uma animação*/
     transition: margin-left 0.3s;
@@ -470,18 +470,44 @@ são preparados para diversas telas de dispositivos*/
     }
 
     /*Espaçamento*/
-    #DadosFormAlt{width:50%;}
+    #DadosFormAlt{width:50%; padding: 0px 90px;}
 
     /*Espaço das imagens*/
     #ImgLivroAlt{display: flex; width: 48%;}
 
-    #ImgLivroAlt img, #DadosFormAlt img{width: 47%; height: 207px;}
+    #ImgLivroAlt div img, #DadosFormAlt img{width: 90%; height: 207px;}
+    /*Afasto as fotos*/
+
 
     /*Divisão dos inputs*/
     #FormAlterar{display: grid;}
 
     /*Alterando espaço, tamanho e altura*/
-    .inputAlterarAutor,#EnviarAlteracao{margin: 0px 0px 7px; width: 47%; height: 44px; padding: 12px;
+    .inputAlterarAutor,#EnviarAlteracao{margin: 0px 0px 7px; width: 88%; height: 44px; padding:12px;}
+
+    
+    .TitulosAlt 
+    {
+        font-family: 'roboto','sans-serif';
+        font-size: 17pt;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    #pessoa{
+        margin-right: 15px;
+    }
 
 
+    /*Definindo tamanho para adptar ao texto*/
+    #pessoa,
+    #livro
+    {
+        width:100%;
+    }
+
+    /*Texto*/
+    #pessoa p,
+    #livro p{
+        text-align: justify;
     }

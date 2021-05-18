@@ -7,7 +7,7 @@ Class UsuarioController{
         $_COOKIE['Status'] = "Usuario";
     }
 
-    public function login($id, &$status)
+    public function login($id)
     {
         if(!empty($_POST['Login']) or !empty($_POST['Senha']) )
             {
@@ -19,11 +19,11 @@ Class UsuarioController{
                 //Faço o login
                 $resultado = $usuario->Logar($_POST);
 
-                 //Passo os dados do Livro
-                $livros = new LivrosController();
+                //Passo os dados do Livro
+                $livros = new Livros();
 
                 //Busca Livros
-                $livros1 = $livros->Acervo();
+                $livros1 = $livros->TodosLivros();
 
                 //Ao passar Status por referência
                 //Retorno o valor para a variavel
@@ -40,9 +40,12 @@ Class UsuarioController{
 
                     //Carrega o template que quero
                     $Template = $twig->load('Admin.html');
-                    
                     //Array 
                     $parametros = array();
+                    //Salvo em um cookie o id do usuario para poder chamar ele quando quiser
+                    //recareregar a pagina
+                    setcookie("id_login", $resultado->id_login);
+                    $_COOKIE['id_login'] =  $resultado->id_login;
 
                     //Nele fica os objetos dentro de uma casa do vetor
                     $parametros['Nome'] = $resultado->Nome;
