@@ -36,7 +36,7 @@
                  </div>
 
                  <!--Conteudo Principal-->
-                <a id="adm" href="#">Administrador(a): {{Nome}} </a>
+                <a id="adm" href="#">Administração </a>
             </div>
             
             <!--Sair-->
@@ -54,7 +54,7 @@
             <ul id="lista">
             
                 <li></li>
-                <li id="linkMenu" href="?pagina=Usuario&metodo=Perfil}">Perfil</li>
+                <li id="linkMenu" href="?pagina=Usuario&metodo=Perfil">Perfil</li>
                 <li>Páginas</li>
                 <li>Categorias</li>
                 <li>Plugins</li>
@@ -68,7 +68,7 @@
             <ul id="lista">
             
                 <li></li>
-                <li id="linkMenu" href="?pagina=Usuario&metodo=Perfil">{{Nome}}</li>
+                <li id="linkMenu" href="?pagina=Usuario&metodo=Perfil">Nome</li>
                 <li>Páginas</li>
                 <li>Categorias</li>
                 <li>Plugins</li>
